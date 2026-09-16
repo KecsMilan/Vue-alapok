@@ -13,6 +13,7 @@
          <h1>{{formattedPrice}}</h1>
         <button v-on:click="decreasePrice">-</button>
         <button v-on:click="increasePrice">+</button>
+        <p v-if="errorMessage">{{errorMessage}}</p>
     </div>
 
     <script src="main.js"></script>

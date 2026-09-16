@@ -21,6 +21,15 @@ const app = createApp({
             )
         }
 
+        const formattedPrice = Vue.computed(() => {
+            return price.value.toLocaleString('ru-RU',
+                {
+                    style: 'currency',
+                    currency: 'RUB'
+                }
+            )
+        })
+
         return { 
             formattedPrice,
             price,
