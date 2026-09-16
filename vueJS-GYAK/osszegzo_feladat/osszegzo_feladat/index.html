@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelBolt — összefoglaló feladat</title>
+</head>
+<script src="https://unpkg.com/vue@3"></script>
+<body>
+    <div id="app">
+        <!-- A feladat leírása a FELADAT.md-ben van.
+             Ide dolgozz: interpoláció, v-html, v-bind, v-for, v-if, v-show, :style -->
+        <div class="header">
+            <h1 :title="tooltip">{{ shopName }}</h1>
+            <p>{{ slogan }}</p>
+        </div>
+
+        <div class="kiemelt">
+            <img :src="logo.src" :alt="logo.alt" :width="logo.width">
+            <ol>
+               <li v-for="kiemelt in kiemeltek">
+                    {{ kiemelt.name }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="polc">
+            <template v-for="polcTomb in polcok">
+                <br>
+                <ul>
+                    <li v-for="(polc, index) in polcTomb" :key=`${index}`>
+                        {{ polc }}
+                    </li>
+                </ul> 
+            </template>
+        </div>
+
+        <div class="onSale">
+            <h2>Most kapható!</h2>
+            <template v-for="termek in termekek" :key="termek.id">
+                <ul>
+                    <li v-if="termek.keszlet > 0"> {{ termek.name }}</li>
+                </ul>
+            </template>
+        </div>
+
+        <div class="onStock">
+            <template v-for="termek in termekek" :key="termek.id">
+                {{ termek.name }}
+                <span v-if="termek.keszlet === 0" :style="{ color: elfogyottSzin}">
+                    Elfogyott
+                </span>
+                <span v-else-if="termek.keszlet < 3" :style="{ color: utolsoDarabSzin}">
+                    Utolsó darabok, csak {{ termek.keszlet }} db
+                </span>
+                <span v-else="termek.keszlet === 0" :style="{ color: raktaronSzin}">
+                    Raktáron
+                </span>
+                <br>
+            </template>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
