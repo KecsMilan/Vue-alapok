@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
     <div id="appdiv">
-        <form action="" @submit.prevent="handleSubmit()">
+        <!-- javascript megoldás id-val -->
+        <!-- <form id="userForm" action="" @submit.prevent="handleSubmit()"> -->
+        <form ref="userForm" action="" @submit.prevent="handleSubmit()">
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" v-model="formData.name">
-                <p>{{ formData.name }}</p>
+                <!-- <p>{{ formData.name }}</p> -->
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" v-model="formData.email">
-                <p>{{ formData.email }}</p>
+                <!-- <p>{{ formData.email }}</p> -->
             </div>
 
             <div class="form-group">

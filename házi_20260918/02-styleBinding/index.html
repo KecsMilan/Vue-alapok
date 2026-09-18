@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Init Vue App</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="appdiv">
+        <h1>Guitars</h1>
+        <div class="guitar-catalogue">
+            <div v-for="guitar in guitars" class="guitar">
+                <span v-if="guitar.stock == 0" :style="{color :outOfStockColor}">
+                    {{ guitar.title }} {{ guitar.stock}}
+                </span>
+                <span v-else-if="guitar.stock > 0" :style="{color :inStockColor}">
+                    {{ guitar.title }} || {{ guitar.stock}} db
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
