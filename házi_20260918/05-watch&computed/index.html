@@ -9,9 +9,13 @@
 <body>
     <div id="appdiv">
         <form action="" @submit="">
-            <label>Name:</label>
-            <input type="text" v-model="name">
-            <button type="submit">Küldés</button>
+            <label for="">Count</label>
+            <input type="number" v-model="count" value="0" min="0" max="10" step="1">
+            <br>
+            <label for="">Price</label>
+            <input type="number" v-model="price" value="0" min="0" max="10000" step="100">
+            <br>
+            <span>Full price: {{ resPrice }}</span>
         </form>
     </div>
 
