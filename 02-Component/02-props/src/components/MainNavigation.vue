@@ -1,10 +1,15 @@
 <script setup>
-
+    defineProps({
+        title: {
+            type: String,
+            default: "paparapara"
+        }
+    })
 </script>
 
 <template> 
     <nav>
-        <li><a href="/">Vue App</a></li>
+        <li><a href="/">{{ title }}</a></li>
         <li><a href="https://vuejs.org/">Vue JS</a></li>
     </nav>
 </template>
