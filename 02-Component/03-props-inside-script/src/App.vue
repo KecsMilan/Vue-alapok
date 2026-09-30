@@ -4,16 +4,16 @@
     import InputField from './components/InputField.vue';
     import MainNavigation from './components/MainNavigation.vue';
     import SiteFooter from './components/SiteFooter.vue';
-    import SideContent from './components/SideContent.vue';
+    import SiteContent from './components/SiteContent.vue';
 
     const title = ref('VUE')
 
     setTimeout(()=>{
-        title.value = "REACT IS BETTER"
+        title.value = "REACT"
     }, 3000)
 
-    const handleClick = () => {
-        console.log("test")
+    const logMessage = (name) => {
+        console.log('Input field changed', name)
     }
 
 </script>
@@ -24,8 +24,8 @@
         <!-- <MainNavigation /> -->
     </header>
     <main>
-        <SideContent />
-        <InputField @on-input="handleClick"/>
+        <SiteContent />
+        <InputField @on-change="logMessage"/>
     </main>
     <footer>
         <SiteFooter />

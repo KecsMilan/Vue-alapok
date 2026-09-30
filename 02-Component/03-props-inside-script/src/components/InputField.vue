@@ -1,11 +1,20 @@
 <script setup>
+import {ref} from 'vue';
+    
     defineEmits([
-        'on-input'
+        'on-change'
     ])
+
+    const name = ref('')
+
 </script>
 
 <template> 
-    <input @input="$emit('on-input')" type="text" placeholder="Enter your name" >
+    <input
+    v-model="name"
+    @input="$emit('on-change', name)"
+    type="text" 
+    placeholder="Enter your name">
 </template>
 
 <style scoped>
