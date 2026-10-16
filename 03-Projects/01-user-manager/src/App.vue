@@ -14,7 +14,11 @@ try{
 
 const handleDeleteUser = async (userId) => {
   try{
-    await removeUser(userId);
+    const confirmDelete = confirm("Are you sure you want to delete this user?");
+
+    if(confirmDelete){
+      await removeUser(userId);
+    }
   } catch (error){
     console.error("Errror removing users:",error)
   }
