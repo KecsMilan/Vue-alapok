@@ -1,8 +1,13 @@
-import { apiClient } from '../utils/apiClient'
+import apiClient  from "../utils/apiClient.js"
 
 const urlFragment = "users"
 
 export async function getUsers() {
-    const response = apiClient.get(urlFragment)
+    const response = await apiClient.get(urlFragment)
     return response.data;
 }
+
+export async function deleteUser(id) {
+    const response = await apiClient.delete(`${urlFragment}/${id}`)
+}
+

@@ -1,13 +1,24 @@
 <script setup>
 
-import { ref } from 'vue'
-import { getUsers } from '../APIs/userAPI';
+import { ref, onMounted, remove } from 'vue'
+import { useUserStore } from '../store/user.js';
 
-const users = ref([])
 
-onMounted(async () => {
-  users.value = await getUsers()
-})
+const {users, fetchUsers, removeUser} = useUserStore();
+
+try{
+  fetchUsers()
+} catch (error) {
+  console.error("Error fetching users:",error)
+}
+
+const handleDeleteUser = async (userId) => {
+  try{
+    await removeUser(userId);
+  } catch (error){
+    console.error("Errror removing users:",error)
+  }
+}
 
 </script>
 
@@ -30,7 +41,7 @@ onMounted(async () => {
         <td>{{ user.emailAddress }}</td>
         <td>
           <button class="btn btn-primary">Edit</button>
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-danger" @click="handleDeleteUser(user.id)">Delete</button>
         </td>
       </tr>
     </tbody>
