@@ -7,10 +7,12 @@ export function useUserStore() {
     async function fetchUsers() {
         users.value = await getUsers();
     }
+
     async function removeUser(id) {
         await deleteUser(id);
         users.value = users.value.filter(user => user.id != id)
     }
+    
     return {
         users,
         fetchUsers,
