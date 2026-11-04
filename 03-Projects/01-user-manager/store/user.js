@@ -14,9 +14,9 @@ export function useUserStore() {
     }
     
     async function modifyUser(updatedUser){
-        const {id, ...userData} = updateUser
+        const {id, ...userData} = updatedUser
         const response = await updateUser(id, userData)
-        user.value = users.value.map(u => u.id === id ? response : u)
+        users.value = users.value.map(u => u.id === id ? response : u)
     }
 
     return {
