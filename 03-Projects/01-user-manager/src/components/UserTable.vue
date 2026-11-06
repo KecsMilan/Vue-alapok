@@ -2,6 +2,7 @@
 import {ref} from 'vue'
 import { useUserStore } from '../../store/user';
 import EditUserModal from './EditUserModal.vue';
+import SearchBar from './SearchBar.vue';
 
 const { users, removeUser } = useUserStore();
 
@@ -23,9 +24,19 @@ const handleDeleteUser = async (userId) => {
   }
 }
 
+/*const search = computed(() => {
+        return users.filter((d) => d.firstName.toLowerCase().includes(text))
+    })
+
+    watch(value, (newValue) => {
+        console.log(newValue)
+    })*/
+
 </script>
 
 <template>
+    <SearchBar @search=""/>
+
     <table class="table table-striped">
     
     <thead>
