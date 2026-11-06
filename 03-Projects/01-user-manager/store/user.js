@@ -21,7 +21,7 @@ export function useUserStore() {
 
     const addUser = async (user) => {
         const response = await createUser(user)
-        users.value = [...users.value, response] 
+        users.value = [response, ...users.value, ] 
     }
 
     return {

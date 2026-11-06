@@ -1,6 +1,24 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 #app {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     font-weight: normal;
+}
+
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color:red;
+}
+
+input:focus:valid {
+    box-shadow: 0.25px 0.25px 10px rgba(0, 128, 0, 0.75)
+}
+
+input:focus:invalid {
+    box-shadow: 0.25px 0.25px 10px rgba(255, 0, 0, 0.75)
 }
