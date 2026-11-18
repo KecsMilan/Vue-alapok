@@ -3,7 +3,7 @@
 
 <template>
     <nav class="nav">
-        <ul>
+        <ul class="nav_list">
             <li>
                 <router-link :to="{name: 'guitarList'}">Guitar</router-link>
             </li>
@@ -17,5 +17,10 @@
 <style scoped>
 .nav {
     background-color: var(--dark);
+}
+.nav_list {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
 }
 </style>
