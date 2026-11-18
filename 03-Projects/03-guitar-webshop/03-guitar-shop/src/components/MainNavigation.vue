@@ -2,10 +2,13 @@
 </script>
 
 <template>
-    <nav>
+    <nav class="nav">
         <ul>
             <li>
-                <router-link class="green" :to="{name: 'guitarList'}">Guitar</router-link>
+                <router-link :to="{name: 'guitarList'}">Guitar</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'cart'}">Cart</router-link>
             </li>
         </ul>
     </nav>
