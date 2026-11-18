@@ -21,6 +21,6 @@
 .nav_list {
     padding: 1rem 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-between;
 }
 </style>
