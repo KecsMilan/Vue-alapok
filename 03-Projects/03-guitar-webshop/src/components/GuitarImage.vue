@@ -13,6 +13,7 @@ defineProps({
 
 <style scoped>
 .guitar_image {
-    height: 15px;
+    height: 100px;
+    padding-left: 10px;
 }
 </style>
